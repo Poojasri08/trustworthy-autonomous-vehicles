@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Trustworthy Autonomous Vehicles
 
 My autonomous vehicle cybersecurity project.
@@ -154,4 +154,4 @@ See:
 # 📄 License
 
 This project is licensed under the MIT License.
->>>>>>> 27cb86985f04308d4c6257e148df3892a66449ce
+
