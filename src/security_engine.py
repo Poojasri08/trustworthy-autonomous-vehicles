@@ -22,6 +22,18 @@ def classify_trust(trust):
     return "LOW"
 
 
+def detect_anomaly(row):
+    distance_difference = abs(
+        row["distance"] - row["lidar_distance"]
+    )
+
+    return (
+        row["camera_confidence"] < 0.7
+        or distance_difference > 5
+        or row["attack"] == 1
+    )
+
+
 def calculate_risk(trust_score, attack):
     risk = (1 - trust_score) * 100
 
@@ -65,6 +77,11 @@ def explain_row(row):
 
 def process_sensor_data(file_path):
     df = pd.read_csv(file_path)
+
+    df["anomaly_detected"] = df.apply(
+        detect_anomaly,
+        axis=1
+    )
 
     df["trust_score"] = df.apply(
         calculate_trust,
