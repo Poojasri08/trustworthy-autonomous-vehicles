@@ -52,7 +52,13 @@ def explain_row(row):
         reasons.append("Sensor readings appear consistent")
 
     return "; ".join(reasons)
+def calculate_risk(trust_score, attack):
+    risk = (1 - trust_score) * 100
 
+    if attack == 1:
+        risk += 30
+
+    return round(min(100, risk), 2)
 
 # Load data
 df = pd.read_csv("data/sensor_data.csv")
@@ -60,6 +66,13 @@ df = pd.read_csv("data/sensor_data.csv")
 # Trust evaluation
 df["trust_score"] = df.apply(calculate_trust, axis=1)
 df["trust_level"] = df["trust_score"].apply(classify_trust)
+df["risk_score"] = df.apply(
+    lambda row: calculate_risk(
+        row["trust_score"],
+        row["attack"]
+    ),
+    axis=1
+)
 
 # Security monitoring
 df["security_status"] = df.apply(security_decision, axis=1)
@@ -76,9 +89,9 @@ columns = [
     "attack",
     "trust_score",
     "trust_level",
+    "risk_score",
     "security_status",
     "explanation"
 ]
-
 print("\n=== TRUSTWORTHY AUTONOMOUS VEHICLE SECURITY MONITOR ===\n")
 print(df[columns].to_string(index=False))
