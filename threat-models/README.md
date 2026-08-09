@@ -1,96 +1,129 @@
-Threat Models
+# 🔐 Threat Models
 
+This directory documents cybersecurity threats that may affect autonomous vehicle systems. Each threat model describes the attack, its potential impact, detection approach, and possible mitigation strategies.
 
+## 🚨 1. Sensor Spoofing
 
-This directory documents potential cybersecurity threats affecting autonomous vehicle systems and the security risks considered in this prototype.
+**🎯 Threat Description**
 
+Sensor spoofing occurs when an attacker provides false or manipulated information to a vehicle's sensors. This can cause the vehicle to incorrectly understand its surrounding environment.
 
+**⚔️ Attack Scenario**
 
-Threat Categories
+An attacker attempts to influence sensor readings so that the vehicle receives incorrect information about objects, distances, or environmental conditions.
 
+**⚠️ Potential Impact**
 
+False sensor readings can reduce sensor reliability, lower the system's trust score, and increase the calculated security risk.
 
-1\. Sensor Spoofing
+**🔍 Detection Approach**
 
+The system compares sensor readings and identifies unusual or inconsistent values. Suspicious readings may result in anomaly detection and a security alert.
 
+**🛡️ Mitigation**
 
-An attacker may provide false or manipulated sensor readings.
+Using multiple sensors, checking consistency between sensor readings, and reducing trust in unreliable data can help limit the impact of sensor spoofing.
 
+---
 
+## 🧪 2. Sensor Data Tampering
 
-Example: Camera and LiDAR measurements disagree significantly.
+**🎯 Threat Description**
 
+Sensor data tampering occurs when legitimate sensor information is modified before it is processed by the vehicle's security or decision-making system.
 
+**⚔️ Attack Scenario**
 
-Potential impact: Incorrect perception of the vehicle’s surroundings.
+An attacker changes sensor values so that the processed data no longer represents the actual environment.
 
+**⚠️ Potential Impact**
 
+Tampered data can produce incorrect trust and risk scores and may cause the system to make decisions using unreliable information.
 
-Detection in this prototype: Sensor consistency checks and trust scoring.
+**🔍 Detection Approach**
 
+The system can monitor sensor values for unexpected changes and compare related measurements to identify inconsistencies.
 
+**🛡️ Mitigation**
 
-2\. Low-Confidence Sensor Data
+Data validation, integrity checks, sensor cross-validation, and continuous monitoring can reduce the risk of undetected tampering.
 
+---
 
+## 📡 3. Communication Attacks
 
-A sensor may produce readings with unusually low confidence.
+**🎯 Threat Description**
 
+Communication attacks target the exchange of information between vehicle components, sensors, or connected systems.
 
+**⚔️ Attack Scenario**
 
-Example: Camera confidence falls significantly below normal levels.
+An attacker attempts to interfere with communication by modifying, delaying, or disrupting information exchanged between system components.
 
+**⚠️ Potential Impact**
 
+Communication problems can result in missing or outdated information and may reduce the reliability of vehicle decisions.
 
-Potential impact: Reduced reliability of the vehicle’s perception system.
+**🔍 Detection Approach**
 
+The system can monitor communication behavior for unexpected delays, missing messages, or unusual data patterns.
 
+**🛡️ Mitigation**
 
-Detection in this prototype: Camera confidence is included in the trust and risk assessment.
+Secure communication protocols, authentication, integrity checks, and continuous monitoring can help protect communication channels.
 
+---
 
+## 📊 4. False Sensor Input
 
-3\. Sensor Manipulation
+**🎯 Threat Description**
 
+False sensor input occurs when a sensor provides information that conflicts significantly with information from another sensor.
 
+**⚔️ Attack Scenario**
 
-An attacker may manipulate sensor values to make the vehicle’s environment appear different from reality.
+A sensor reports a value that does not agree with another available measurement. This may indicate a faulty sensor, abnormal behavior, or a potential attack.
 
+**⚠️ Potential Impact**
 
+Sensor disagreement can reduce confidence in the affected data and increase the calculated risk level.
 
-Potential impact: Unsafe or incorrect system decisions.
+**🔍 Detection Approach**
 
+The prototype compares camera confidence and LiDAR-related measurements to identify inconsistent sensor behavior.
 
+**🛡️ Mitigation**
 
-Detection in this prototype: Cross-sensor comparison and anomaly detection.
+The system can reduce trust in inconsistent readings, compare information from multiple sensors, and generate an alert when significant disagreement is detected.
 
+---
 
+## 🤖 5. AI Decision Manipulation
 
-Prototype Response
+**🎯 Threat Description**
 
+AI decision manipulation occurs when an attacker attempts to influence the data or conditions used by an AI-based vehicle system.
 
+**⚔️ Attack Scenario**
 
-The current prototype does not automatically prevent an attack. Instead, it:
+An attacker provides misleading or manipulated inputs that may influence the AI system's interpretation or decision-making process.
 
+**⚠️ Potential Impact**
 
+Manipulated inputs can reduce confidence in AI decisions and increase the risk of incorrect system behavior.
 
-1\. Processes sensor readings.
+**🔍 Detection Approach**
 
-2\. Checks for inconsistencies and anomalies.
+Monitoring input consistency, sensor trust, anomaly indicators, and risk scores can help identify suspicious conditions affecting AI-based decisions.
 
-3\. Calculates a trust score.
+**🛡️ Mitigation**
 
-4\. Calculates a risk score.
+Input validation, anomaly detection, sensor cross-checking, explainable alerts, and continuous monitoring can improve the reliability of AI-assisted decisions.
 
-5\. Assigns a security status.
+---
 
-6\. Provides an explanation for suspicious samples.
+## 📌 Project Scope
 
+These threat models describe simulated cybersecurity scenarios for the current prototype.
 
-
-Limitations
-
-
-
-This is a rule-based prototype using a simulated dataset. It is not a production autonomous-vehicle security system and has not been validated against real vehicle data or real-world attacks.
-
+The project uses simulated sensor data and rule-based detection. It is not intended to represent a production autonomous vehicle security system.
