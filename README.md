@@ -2,7 +2,7 @@
 # Trustworthy Autonomous Vehicles
 
 My autonomous vehicle cybersecurity project.
-=======
+
 # 🚗🔒 Trustworthy Autonomous Vehicles: Cybersecurity & AI Framework
 
 ## 📌 Overview
@@ -89,6 +89,14 @@ Maintaining system trust through:
 - Continuous improvement
 
 📄 Details: [Continuous Monitoring](docs/continuous-monitoring.md)
+
+---
+
+## 🖥️ Dashboard
+
+The project includes a Streamlit dashboard for monitoring sensor trust, risk scores, detected attacks, and security status.
+
+![Streamlit Dashboard](docs/dashboard.png)
 
 ---
 
