@@ -1,6 +1,6 @@
-#🚗🔒 Trustworthy Autonomous Vehicles
+# 🚗🔒 Trustworthy Autonomous Vehicles
 
-##📌 Overview
+## 📌 Overview
 
 Autonomous vehicles use artificial intelligence, sensors, and software to make real-time decisions. However, unreliable sensor readings, sensor inconsistencies, and anomalous behavior can create safety and cybersecurity risks.
 
@@ -8,9 +8,9 @@ This project presents a Trust-Aware Cybersecurity Framework for Autonomous Vehic
 
 The project currently includes both a vehicle monitoring system and a drone security simulation.
 
-⸻
 
-##🎯 Objectives
+
+## 🎯 Objectives
 
 * Monitor autonomous vehicle and drone sensor data
 * Evaluate sensor consistency and reliability
@@ -20,11 +20,11 @@ The project currently includes both a vehicle monitoring system and a drone secu
 * Generate NORMAL, SUSPICIOUS, and HIGH RISK security decisions
 * Provide a visual monitoring dashboard using Streamlit
 
-⸻
 
-##🏗️ System Architecture
 
-###Processing Pipeline
+## 🏗️ System Architecture
+
+### Processing Pipeline
 
 GPS + IMU + Camera + Distance
               ↓
@@ -42,11 +42,11 @@ GPS + IMU + Camera + Distance
               ↓
       Streamlit Dashboard
 
-⸻
 
-##🚁 Drone Security System
 
-The drone simulation uses multiple sensor inputs:
+## 🚁 Drone Security System
+
+### The drone simulation uses multiple sensor inputs:
 
 * GPS speed
 * IMU speed
@@ -55,7 +55,7 @@ The drone simulation uses multiple sensor inputs:
 
 The system evaluates these values for consistency and reliability.
 
-###Trust Calculation
+### Trust Calculation
 
 The Trust Engine calculates a trust score between 0 and 1.
 
@@ -63,19 +63,19 @@ Trust Score ≥ 0.8  → HIGH
 Trust Score ≥ 0.5  → MEDIUM
 Trust Score < 0.5  → LOW
 
-###Risk Calculation
+### Risk Calculation
 
 Risk is calculated from the trust score:
 
 Risk = (1 - Trust Score) × 100
 
-⸻
 
-##🤖 ML Anomaly Detection
+
+## 🤖 ML Anomaly Detection
 
 The system uses the Isolation Forest algorithm to detect unusual sensor behavior.
 
-###ML Features
+### ML Features
 
 The model uses:
 
@@ -84,55 +84,55 @@ The model uses:
 * Camera confidence
 * Distance
 
-###ML Output
+### ML Output
 
 NORMAL
 ANOMALY
 
-⸻
 
-##📊 ML Performance
+
+## 📊 ML Performance
 
 The Isolation Forest model was evaluated using 130 labeled sensor samples.
 
-###Classification Results
+### Classification Results
 
 Metric	NORMAL	ANOMALY
 Precision	0.91	0.81
 Recall	0.95	0.70
 F1-Score	0.93	0.75
 
-###Overall Accuracy
+### Overall Accuracy
 
 89%
 
-###Confusion Matrix
+### Confusion Matrix
 
 Actual / Predicted	NORMAL	ANOMALY
 NORMAL	95	5
 ANOMALY	9	21
 
-###Model Interpretation
+### Model Interpretation
 
 The model correctly identified:
 
 * 95 normal samples
 * 21 anomalous samples
 
-It incorrectly classified:
+#### It incorrectly classified:
 
 * 5 normal samples as anomalies
 * 9 anomalous samples as normal
 
 This demonstrates that the current model is a working prototype, but further improvement is required before real-world deployment.
 
-⸻
 
-##🛡️ Security Engine
 
-The Security Engine combines the Trust Engine result with the ML anomaly result.
+## 🛡️ Security Engine
 
-###Decision Logic
+#### The Security Engine combines the Trust Engine result with the ML anomaly result.
+
+### Decision Logic
 
 HIGH Trust + NORMAL
         ↓
@@ -147,23 +147,24 @@ LOW Trust + ANOMALY
         ↓
     HIGH RISK
 
-Security Decision Levels
+### Security Decision Levels
 
-Trust Level	ML Result	Security Status
-HIGH	NORMAL	NORMAL
-LOW	NORMAL	SUSPICIOUS
-HIGH	ANOMALY	SUSPICIOUS
-LOW	ANOMALY	HIGH RISK
+|  Trust Level   |    ML Result	    |   Security Status  |
+|----------------|------------------|--------------------|
+|HIGH	           |  NORMAL	        |NORMAL              |
+|LOW	           |  NORMAL	        |SUSPICIOUS          |
+|HIGH	           |  ANOMALY	        |SUSPICIOUS          |
+|LOW	           |  ANOMALY	        |HIGH RISK           |
+
 
 This layered approach allows rule-based sensor reliability and ML anomaly detection to contribute to the final security decision.
 
-⸻
 
-##🧪 Integration Testing
+## 🧪 Integration Testing
 
 The complete security pipeline was tested using controlled high-risk sensor conditions.
 
-###High-Risk Test
+### High-Risk Test
 
 LOW TRUST
     +
@@ -171,7 +172,7 @@ ML ANOMALY
     ↓
 HIGH RISK
 
-Test Results
+### Test Results
 
 Test Case	Trust Level	ML Result	Security Status
 1	LOW	ANOMALY	HIGH RISK
@@ -180,15 +181,15 @@ Test Case	Trust Level	ML Result	Security Status
 
 The integration test successfully confirmed the intended high-risk decision logic.
 
-⸻
 
-##📊 Streamlit Dashboard
+
+## 📊 Streamlit Dashboard
 
 The Streamlit dashboard provides monitoring for both the vehicle and drone systems.
 
-##🚗 Vehicle Monitor
+## 🚗 Vehicle Monitor
 
-###Displays:
+### Displays:
 
 * Average Trust
 * Average Risk
@@ -198,9 +199,9 @@ The Streamlit dashboard provides monitoring for both the vehicle and drone syste
 * Risk score
 * Security status
 
-##🚁 Drone Monitor
+## 🚁 Drone Monitor
 
-###Displays:
+### Displays:
 
 * Average Trust
 * Average Risk
@@ -214,9 +215,9 @@ The Streamlit dashboard provides monitoring for both the vehicle and drone syste
 * Security status
 * Explanation/reason
 
-⸻
 
-##🧰 Technologies Used
+
+## 🧰 Technologies Used
 
 * Python
 * Pandas
@@ -227,9 +228,9 @@ The Streamlit dashboard provides monitoring for both the vehicle and drone syste
 * Git
 * GitHub
 
-⸻
 
-##📁 Project Structure
+
+## 📁 Project Structure
 
 trustworthy-autonomous-vehicles/
 │
@@ -253,37 +254,37 @@ trustworthy-autonomous-vehicles/
     ├── generate_drone_data.py
     └── test_high_risk.py
 
-⸻
 
-##🚀 How to Run
 
-1. Install Dependencies
+## 🚀 How to Run
 
-pip install pandas scikit-learn streamlit
+#### 1. Install Dependencies
 
-2. Run the ML Anomaly Detector
+    pip install pandas scikit-learn streamlit
 
-python src/drone_anomaly_detector.py
+#### 2. Run the ML Anomaly Detector
 
-3. Run the Drone Security Engine
+    python src/drone_anomaly_detector.py
 
-python -m src.drone_security_engine
+#### 3. Run the Drone Security Engine
 
-4. Run the High-Risk Integration Test
+    python -m src.drone_security_engine
 
-python -m src.test_high_risk
+#### 4. Run the High-Risk Integration Test
 
-5. Run the Streamlit Dashboard
+    python -m src.test_high_risk
 
-python -m streamlit run app.py
+#### 5. Run the Streamlit Dashboard
 
-Then open the local Streamlit URL shown in the terminal.
+    python -m streamlit run app.py
 
-⸻
+  Then open the local Streamlit URL shown in the terminal.
 
-##🔬 Testing Summary
 
-###Component	Result
+
+## 🔬 Testing Summary
+
+### Component	Result
 Trust calculation	✅ Passed
 Risk calculation	✅ Passed
 Sensor consistency	✅ Passed
@@ -296,13 +297,13 @@ SUSPICIOUS decision	✅ Passed
 HIGH RISK decision	✅ Passed
 Streamlit dashboard	✅ Passed
 
-⸻
 
-##⚠️ Limitations
+
+## ⚠️ Limitations
 
 This project is a research and educational prototype.
 
-###The current system:
+### The current system:
 
 * Uses simulated sensor data
 * Uses a relatively small dataset
@@ -313,9 +314,9 @@ This project is a research and educational prototype.
 
 The 89% accuracy should therefore be interpreted as a prototype evaluation result, not evidence of production-level autonomous vehicle security.
 
-⸻
 
-##🔮 Future Improvements
+
+## 🔮 Future Improvements
 
 * Real-time sensor integration
 * Larger and more diverse datasets
@@ -328,11 +329,11 @@ The 89% accuracy should therefore be interpreted as a prototype evaluation resul
 * Continuous model evaluation
 * Real-world cybersecurity attack datasets
 
-⸻
 
-##📌 Project Status
 
-Current Status: First Complete ML Prototype ✅
+## 📌 Project Status
+
+### Current Status: First Complete ML Prototype ✅
 
 The current implementation demonstrates a complete pipeline from simulated sensor data to:
 
@@ -340,10 +341,11 @@ Sensor Data → Trust Evaluation → ML Anomaly Detection → Security Decision 
 
 The next phase is focused on testing, optimization, documentation, and evaluation, rather than adding unnecessary features.
 
-⸻
 
-##👩‍💻 Project
 
-###Trustworthy Autonomous Vehicles: Cybersecurity & AI Framework
+## 👩‍💻 Project
+
+### Trustworthy Autonomous Vehicles: Cybersecurity & AI Framework
 
 A project exploring how sensor trust evaluation and machine-learning anomaly detection can be combined to improve the security and reliability of autonomous systems.
+ 
