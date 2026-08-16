@@ -1,6 +1,6 @@
-🚗🔒 Trustworthy Autonomous Vehicles
+#🚗🔒 Trustworthy Autonomous Vehicles
 
-📌 Overview
+##📌 Overview
 
 Autonomous vehicles use artificial intelligence, sensors, and software to make real-time decisions. However, unreliable sensor readings, sensor inconsistencies, and anomalous behavior can create safety and cybersecurity risks.
 
@@ -10,7 +10,7 @@ The project currently includes both a vehicle monitoring system and a drone secu
 
 ⸻
 
-🎯 Objectives
+##🎯 Objectives
 
 * Monitor autonomous vehicle and drone sensor data
 * Evaluate sensor consistency and reliability
@@ -22,9 +22,9 @@ The project currently includes both a vehicle monitoring system and a drone secu
 
 ⸻
 
-🏗️ System Architecture
+##🏗️ System Architecture
 
-Processing Pipeline
+###Processing Pipeline
 
 GPS + IMU + Camera + Distance
               ↓
@@ -44,7 +44,7 @@ GPS + IMU + Camera + Distance
 
 ⸻
 
-🚁 Drone Security System
+##🚁 Drone Security System
 
 The drone simulation uses multiple sensor inputs:
 
@@ -55,7 +55,7 @@ The drone simulation uses multiple sensor inputs:
 
 The system evaluates these values for consistency and reliability.
 
-Trust Calculation
+###Trust Calculation
 
 The Trust Engine calculates a trust score between 0 and 1.
 
@@ -63,7 +63,7 @@ Trust Score ≥ 0.8  → HIGH
 Trust Score ≥ 0.5  → MEDIUM
 Trust Score < 0.5  → LOW
 
-Risk Calculation
+###Risk Calculation
 
 Risk is calculated from the trust score:
 
@@ -71,11 +71,11 @@ Risk = (1 - Trust Score) × 100
 
 ⸻
 
-🤖 ML Anomaly Detection
+##🤖 ML Anomaly Detection
 
 The system uses the Isolation Forest algorithm to detect unusual sensor behavior.
 
-ML Features
+###ML Features
 
 The model uses:
 
@@ -84,35 +84,35 @@ The model uses:
 * Camera confidence
 * Distance
 
-ML Output
+###ML Output
 
 NORMAL
 ANOMALY
 
 ⸻
 
-📊 ML Performance
+##📊 ML Performance
 
 The Isolation Forest model was evaluated using 130 labeled sensor samples.
 
-Classification Results
+###Classification Results
 
 Metric	NORMAL	ANOMALY
 Precision	0.91	0.81
 Recall	0.95	0.70
 F1-Score	0.93	0.75
 
-Overall Accuracy
+###Overall Accuracy
 
 89%
 
-Confusion Matrix
+###Confusion Matrix
 
 Actual / Predicted	NORMAL	ANOMALY
 NORMAL	95	5
 ANOMALY	9	21
 
-Model Interpretation
+###Model Interpretation
 
 The model correctly identified:
 
@@ -128,11 +128,11 @@ This demonstrates that the current model is a working prototype, but further imp
 
 ⸻
 
-🛡️ Security Engine
+##🛡️ Security Engine
 
 The Security Engine combines the Trust Engine result with the ML anomaly result.
 
-Decision Logic
+###Decision Logic
 
 HIGH Trust + NORMAL
         ↓
@@ -159,11 +159,11 @@ This layered approach allows rule-based sensor reliability and ML anomaly detect
 
 ⸻
 
-🧪 Integration Testing
+##🧪 Integration Testing
 
 The complete security pipeline was tested using controlled high-risk sensor conditions.
 
-High-Risk Test
+###High-Risk Test
 
 LOW TRUST
     +
@@ -182,13 +182,13 @@ The integration test successfully confirmed the intended high-risk decision logi
 
 ⸻
 
-📊 Streamlit Dashboard
+##📊 Streamlit Dashboard
 
 The Streamlit dashboard provides monitoring for both the vehicle and drone systems.
 
-🚗 Vehicle Monitor
+##🚗 Vehicle Monitor
 
-Displays:
+###Displays:
 
 * Average Trust
 * Average Risk
@@ -198,9 +198,9 @@ Displays:
 * Risk score
 * Security status
 
-🚁 Drone Monitor
+##🚁 Drone Monitor
 
-Displays:
+###Displays:
 
 * Average Trust
 * Average Risk
@@ -216,7 +216,7 @@ Displays:
 
 ⸻
 
-🧰 Technologies Used
+##🧰 Technologies Used
 
 * Python
 * Pandas
@@ -229,7 +229,7 @@ Displays:
 
 ⸻
 
-📁 Project Structure
+##📁 Project Structure
 
 trustworthy-autonomous-vehicles/
 │
@@ -255,7 +255,7 @@ trustworthy-autonomous-vehicles/
 
 ⸻
 
-🚀 How to Run
+##🚀 How to Run
 
 1. Install Dependencies
 
@@ -281,9 +281,9 @@ Then open the local Streamlit URL shown in the terminal.
 
 ⸻
 
-🔬 Testing Summary
+##🔬 Testing Summary
 
-Component	Result
+###Component	Result
 Trust calculation	✅ Passed
 Risk calculation	✅ Passed
 Sensor consistency	✅ Passed
@@ -294,15 +294,15 @@ Trust + ML integration	✅ Passed
 NORMAL decision	✅ Passed
 SUSPICIOUS decision	✅ Passed
 HIGH RISK decision	✅ Passed
-Streamlit dashboard	✅ Working
+Streamlit dashboard	✅ Passed
 
 ⸻
 
-⚠️ Limitations
+##⚠️ Limitations
 
 This project is a research and educational prototype.
 
-The current system:
+###The current system:
 
 * Uses simulated sensor data
 * Uses a relatively small dataset
@@ -315,7 +315,7 @@ The 89% accuracy should therefore be interpreted as a prototype evaluation resul
 
 ⸻
 
-🔮 Future Improvements
+##🔮 Future Improvements
 
 * Real-time sensor integration
 * Larger and more diverse datasets
@@ -330,7 +330,7 @@ The 89% accuracy should therefore be interpreted as a prototype evaluation resul
 
 ⸻
 
-📌 Project Status
+##📌 Project Status
 
 Current Status: First Complete ML Prototype ✅
 
@@ -342,8 +342,8 @@ The next phase is focused on testing, optimization, documentation, and evaluatio
 
 ⸻
 
-👩‍💻 Project
+##👩‍💻 Project
 
-Trustworthy Autonomous Vehicles: Cybersecurity & AI Framework
+###Trustworthy Autonomous Vehicles: Cybersecurity & AI Framework
 
 A project exploring how sensor trust evaluation and machine-learning anomaly detection can be combined to improve the security and reliability of autonomous systems.
