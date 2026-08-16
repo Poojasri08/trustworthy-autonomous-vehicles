@@ -302,6 +302,32 @@ trustworthy-autonomous-vehicles/
 
 
 
+    ## ⚙️ How It Works
+
+The framework follows a trust-aware security pipeline:
+
+1. **Sensor Data Collection**
+   - Collects inputs such as GPS speed, IMU speed, camera confidence, and distance.
+
+2. **Sensor Trust Evaluation**
+   - Compares sensor readings and evaluates their consistency.
+   - Generates a trust score and trust level.
+
+3. **ML Anomaly Detection**
+   - Uses **Isolation Forest** to identify abnormal sensor behavior.
+
+4. **Risk Assessment**
+   - Combines the trust evaluation and ML anomaly result.
+   - Determines whether the current situation is normal or high risk.
+
+5. **Security Decision**
+   - Produces the final security status based on the detected risk.
+
+6. **Visualization**
+   - The Streamlit dashboard displays the sensor data, trust results, anomaly detection, and security status.
+
+
+
 ## 🚀 How to Run
 
 #### 1. Install Dependencies
