@@ -172,6 +172,16 @@ ML ANOMALY
     ↓
 HIGH RISK
 
+
+
+## 📸 Project Demo
+
+### 🚨 High-Risk Integration Test
+
+The system detects inconsistent sensor readings and identifies the situation as high risk.
+
+![High-Risk Integration Test](screenshots/test_high_risk.png)
+
 ### Test Results
 
 Test Case	Trust Level	ML Result	Security Status
