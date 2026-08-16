@@ -1,8 +1,7 @@
-import pandas as pd
 import streamlit as st
 
 from src.security_engine import process_sensor_data
-from src.drone_trust_engine import load_drone_data
+from src.drone_security_engine import analyze_drone
 
 
 st.set_page_config(
@@ -38,7 +37,7 @@ col3.metric(
     int(df["attack"].sum())
 )
 
-st.subheader("Security Monitoring")
+st.subheader("Vehicle Security Monitoring")
 
 st.dataframe(
     df[
@@ -53,10 +52,10 @@ st.dataframe(
             "security_status"
         ]
     ],
-    use_container_width=True
+    width="stretch"
 )
 
-st.subheader("Risk Score")
+st.subheader("Vehicle Risk Score")
 
 st.bar_chart(df["risk_score"])
 
@@ -67,12 +66,14 @@ st.bar_chart(df["risk_score"])
 
 st.divider()
 
-st.title("🚁 Drone Trust Monitor")
-st.caption("GPS, IMU, camera and obstacle-distance monitoring")
+st.title("🚁 Drone Trust & AI Security Monitor")
+st.caption(
+    "Rule-based sensor trust combined with ML anomaly detection"
+)
 
-drone_df = load_drone_data()
+drone_df = analyze_drone()
 
-col1, col2, col3 = st.columns(3)
+col1, col2, col3, col4 = st.columns(4)
 
 col1.metric(
     "Average Trust",
@@ -85,8 +86,13 @@ col2.metric(
 )
 
 col3.metric(
-    "Suspicious Readings",
-    int((drone_df["trust_level"] == "LOW").sum())
+    "ML Anomalies",
+    int((drone_df["ml_anomaly"] == "ANOMALY").sum())
+)
+
+col4.metric(
+    "High Risk",
+    int((drone_df["security_status"] == "HIGH RISK").sum())
 )
 
 
@@ -99,14 +105,15 @@ st.dataframe(
             "imu_speed",
             "camera_confidence",
             "distance",
-            "attack",
             "trust_score",
             "risk_score",
             "trust_level",
+            "ml_anomaly",
+            "security_status",
             "reason"
         ]
     ],
-    use_container_width=True
+    width="stretch"
 )
 
 
