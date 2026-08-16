@@ -202,6 +202,19 @@ The integration test successfully confirmed the intended high-risk decision logi
 
 
 
+## ✨ Key Features
+
+- 🔐 **Sensor Trust Evaluation** — Evaluates the reliability of sensor inputs.
+- 🤖 **ML Anomaly Detection** — Detects abnormal sensor behavior using machine learning.
+- 🚨 **Risk Classification** — Classifies system conditions based on trust and anomaly results.
+- 🧠 **Trust-Aware Decision Making** — Combines sensor trust and ML results for security decisions.
+- 📊 **Streamlit Dashboard** — Provides a visual interface for monitoring system status.
+- 🧪 **High-Risk Integration Testing** — Tests the framework against inconsistent and anomalous sensor inputs.
+- 🚗 **Autonomous Vehicle Support** — Designed for autonomous vehicle cybersecurity scenarios.
+- 🚁 **Drone Support** — The framework can also be applied to drone sensor-security scenarios.
+
+
+
 ## 📊 Streamlit Dashboard
 
 The Streamlit dashboard provides monitoring for both the vehicle and drone systems.
