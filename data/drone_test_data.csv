@@ -1,0 +1,5 @@
+gps_speed,imu_speed,camera_confidence,distance,attack
+10,10.2,0.95,20,0
+20,30,0.45,20,1
+30,10,0.95,20,1
+30,10,0.45,20,1
