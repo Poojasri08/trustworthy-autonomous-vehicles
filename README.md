@@ -176,11 +176,20 @@ HIGH RISK
 
 ## 📸 Project Demo
 
-### 🚨 High-Risk Integration Test
+###  High-Risk Integration Test
 
-The system detects inconsistent sensor readings and identifies the situation as high risk.
+![High-Risk Integration Test](docs/screenshots/test_high_risk.png)
 
-![High-Risk Integration Test](screenshots/test_high_risk.png)
+### System-Architecture
+
+![System architecture](docs/screenshots/architecture.png)
+
+### Dashboard
+
+![Dashboard](docs/screenshots/project-dashboard.png)
+![Dashboard](docs/screenshots/dashboard2.png)
+
+
 
 ### Test Results
 
