@@ -67,6 +67,7 @@ st.bar_chart(df["risk_score"])
 st.divider()
 
 st.title("🚁 Drone Trust & AI Security Monitor")
+
 st.caption(
     "Rule-based sensor trust combined with ML anomaly detection"
 )
@@ -103,8 +104,6 @@ st.dataframe(
         [
             "gps_speed",
             "imu_speed",
-            "camera_confidence",
-            "distance",
             "trust_score",
             "risk_score",
             "trust_level",
