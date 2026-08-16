@@ -215,6 +215,20 @@ The integration test successfully confirmed the intended high-risk decision logi
 
 
 
+  ## 🛠️ Technology Stack
+
+|    Technology    |              Purpose                  |
+|------------------|---------------------------------------|
+| Python           | Core development and data processing  |
+| Scikit-learn     | Machine learning and anomaly detection|
+| Isolation Forest | ML-based anomaly detection            |
+| Streamlit        | Interactive security dashboard        |
+| Pandas           | Sensor data processing                |
+| NumPy            | Numerical computations                |
+| Git & GitHub     | Version control and project management|
+
+
+
 ## 📊 Streamlit Dashboard
 
 The Streamlit dashboard provides monitoring for both the vehicle and drone systems.
